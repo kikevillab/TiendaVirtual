@@ -1,0 +1,9 @@
+﻿@model TiendaVirtual.Models.Ticket
+@{
+    ViewBag.Title = "CreateTicket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Su pedido se ha procesado correctamente</h2>
+<p>Se ha generado un ticket con identificador @Model.Id con una cantidad total de @Model.TotalPrice €</p>
+

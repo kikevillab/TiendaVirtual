@@ -1,0 +1,198 @@
+/*************
+*   HEADER   *
+*************/
+.header{
+	margin-top:5px;
+}
+
+#search fieldset{
+	background: #ebebeb;
+	padding: 4px;
+	overflow:hidden;
+	margin-bottom:0;
+	background:#ebebeb;
+}
+#search fieldset > form{
+	margin:0px;
+	padding:0px 5px 0px 9px;
+}
+#search button{
+	border-color:#bf3288;
+}
+
+#toolbar ul li{
+	background: #eaeaea;
+	border-radius:5px;
+}
+
+/**************
+*   CONTENT   *
+**************/
+.listaArticulos{
+	padding:0px;
+	margin:0px;
+}
+
+.listaArticulos article{
+	padding:10px;
+	margin: 10px 0px;
+}
+
+.precio{
+	font-weight: bold;
+	font-size:25px;
+}
+
+.resumen{
+	margin-top:20px;
+	padding:10px;
+}
+
+/***************
+*   SIDEBAR    *
+***************/
+.sidebar{
+	padding:10px 10px 0px 0px;
+}
+.sidebar section{
+	
+	border-radius:0px;
+}
+
+.sidebar section .header{
+	padding:10px;
+	margin:0px;
+	background: #c6c6c6;
+}
+
+.sidebar section ul{
+	padding:10px;
+}
+
+.sidebar section ul li a{
+	margin:0px;
+	padding: 5px;
+}
+/***************
+*  GENERALES   *
+***************/
+.red{
+	color: #FF0000;
+}
+
+.red:hover{
+	color: #FF0000;
+}
+
+.green{
+	color: #00FF00;
+}
+
+.blue{
+	color: #074878;
+}
+.yellow{
+	color:#c4c400;
+}
+.bold{
+	font-weight: bold;
+}
+
+.bordered{
+	border: 1px solid #c6c6c6;
+	border-radius: 5px;
+}
+.padding-20{
+	padding:20px;
+}
+.padding-5{
+	padding:5px;
+}
+.title{
+	font-weight:bold;
+	font-size:20px;
+}
+.hidden{
+	display:none;
+}
+.button{
+	cursor: pointer;
+}
+
+/*************
+*   LOGIN    *
+*************/
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+ul{
+	list-style:none;
+}
+
+textarea{
+	resize: none;
+}
+
+
+
+
+/*************
+* INPUT FILE *
+*************/
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+

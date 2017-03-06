@@ -10,7 +10,8 @@ namespace TiendaVirtual.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Products");
+            //return View();
         }
 
         public ActionResult About()

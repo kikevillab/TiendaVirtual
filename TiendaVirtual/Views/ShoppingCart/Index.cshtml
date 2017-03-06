@@ -1,0 +1,66 @@
+﻿@model IEnumerable<TiendaVirtual.Models.TicketProduct>
+
+@using (Html.BeginForm("createTicket", "ShoppingCart", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <h1>Mi carrito</h1>
+    <table class="table">
+        <tr>
+            <th>
+                Producto
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                Precio/Unidad
+            </th>
+            <th>
+                Precio total
+            </th>
+            <th></th>
+        </tr>
+    @{ 
+        double total = 0;
+
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.EditorFor(model => item.Cuantity, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price) €
+            </td>
+            <td>
+                @(item.Price * item.Cuantity) €
+            </td>
+            <td>
+                @Html.ActionLink("Actualizar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+
+            total = total + item.Price * item.Cuantity;
+        }
+        <tr>
+            <td>
+                Total: 
+            </td>
+            <td>
+                @total €
+            </td>
+        </tr>
+    }   
+    </table>
+    <div class="clearfix"></div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Tramitar pedido</button>
+    </div>
+}
+
+
+

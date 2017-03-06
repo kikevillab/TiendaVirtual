@@ -1,0 +1,111 @@
+﻿@model IEnumerable<TiendaVirtual.Models.Product>
+@if (User.Identity.Name == "admin@admin.com")
+{
+
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                <img src='@item.Image' width="50" height="50" /> 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+}
+else
+{
+
+
+    foreach (var item in Model)
+    {
+        <!-- Titulo del articulo -->
+        <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+
+        <div class="articulo">
+            <article class="row clearfix">
+                <div class="col-md-3 bordered padding-20">
+                    <img src="@item.Image" class="img-responsive"/>
+
+                </div>
+                <!-- Descripcion /-->
+                <div class="col-md-6">
+                    <span class="precio red"> @Html.DisplayFor(modelItem => item.Price) € </span>IVA incluido<br />
+                    <p>	@Html.DisplayFor(modelItem => item.Description)	</p>
+                </div>
+                <div class="col-md-3 bordered padding-20 ">
+
+                    @{
+                        if (item.Stock > 0)
+                        {
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input type="number" class="form-control cuantity col-md-1 text-right" value="1" max="@item.Stock"/>
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.ActionLink("Comprar", "Buy", "ShoppingCart", new { id = item.Id, cuantity = 0 }, htmlAttributes: new { @class = "btn btn-primary buy-button" })
+
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <span>Sin Stock</span>
+                        }
+                    }
+
+
+                </div>
+            </article>
+        </div>
+                        }
+                        }
+
+
